@@ -1,0 +1,48 @@
+{
+  "name": "Landmark Identifier",
+  "version": "v2",
+  "author": "AA",
+  "license": "Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)",
+  "description": "A TensorFlow Lite image classification model for recognizing 52 landmarks.",
+  "subgraph_metadata": [
+    {
+      "input_tensor_metadata": [
+        {
+          "name": "image",
+          "description": "Input image to be classified. Expected size is 256x256 RGB, values in range [0, 255].",
+          "content": {
+            "content_properties_type": "ImageProperties",
+            "content_properties": {
+              "color_space": "RGB"
+            }
+          },
+          "stats": {
+            "min": [0.0],
+            "max": [255.0]
+          }
+        }
+      ],
+      "output_tensor_metadata": [
+        {
+          "name": "probability",
+          "description": "Probability scores for each of the 52 landmark classes.",
+          "content": {
+            "content_properties_type": "FeatureProperties",
+            "content_properties": {}
+          },
+          "stats": {
+            "min": [0.0],
+            "max": [1.0]
+          },
+          "associated_files": [
+            {
+              "name": "landmark_names.txt",
+              "description": "Labels for all 52 landmark categories.",
+              "type": "TENSOR_AXIS_LABELS"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
